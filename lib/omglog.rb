@@ -27,7 +27,7 @@ module Omglog
 
   class Base
     CLEAR = "\n----\n"
-    YELLOW, BLUE, GREY, HIGHLIGHT = '0;33', '0;34', '0;90', '1;30;47'
+    GREEN, YELLOW, BLUE, GREY, HIGHLIGHT = '0;32', '0;33', '0;34', '0;90', '1;30;47'
     SHORTEST_MESSAGE = 12
     LOG_CMD = %{git log --all --date-order --graph --color --pretty="format: \2%h\3\2%d\3\2 %an, %ar\3\2 %s\3"}
     LOG_REGEX = /(.*)\u0002(.*)\u0003\u0002(.*)\u0003\u0002(.*)\u0003\u0002(.*)\u0003/
@@ -51,7 +51,7 @@ module Omglog
 
     def self.render_commit commit, cols
       row_highlight = commit[2][/[^\/]HEAD\b/] ? HIGHLIGHT : YELLOW
-      [nil, row_highlight, BLUE, '', GREY].map {|c| "\e[#{c}m" if c }.zip(
+      [nil, row_highlight, GREEN, '', GREY].map {|c| "\e[#{c}m" if c }.zip(
         arrange_commit(commit, cols)
       ).join + "\e[m"
     end
