@@ -1,7 +1,7 @@
 # coding: utf-8
 
 module Romglog
-  VERSION = '0.0.1'
+  VERSION = '0.0.8'
 
   def run_on system
     Romglog::Base.run

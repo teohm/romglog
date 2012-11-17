@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name        = 'romglog'
-  s.version     = '0.0.1'
+  s.version     = '0.0.8'
   s.summary     = "Realtime git log + reflog using fseventsd based on benhoskings's omglog."
   s.description = "Realtime git log + reflog using fseventsd based on benhoskings's omglog. omg! :)"
   s.authors     = ["Huiming Teo"]
